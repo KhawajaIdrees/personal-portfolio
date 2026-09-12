@@ -35,8 +35,6 @@ body {
 .hero-section { min-height: 100vh; flex-shrink: 0; overflow: visible; }
 .section-shell { padding: 60px 40px; border-top: 1px solid var(--line); }
 .section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.section-label::after { content: ''; height: 1px; flex: 1; background: var(--line); }
-.about-section-label::after { display: none; }
 .display-face { font-family: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 700; }
 .editorial-face { font-family: Georgia, 'Times New Roman', serif; }
 .sidebar-mark { font-family: 'Lucida Handwriting', 'Segoe Script', 'Brush Script MT', cursive; font-size: 34px; font-style: normal; font-weight: 400; line-height: 1; letter-spacing: -.08em; }
