@@ -34,6 +34,7 @@ body {
 .section-label::after { content: ''; height: 1px; flex: 1; background: var(--line); }
 .display-face { font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
 .editorial-face { font-family: Georgia, 'Times New Roman', serif; }
+.sidebar-mark { font-family: 'Brush Script MT', 'Segoe Script', cursive; font-size: 32px; font-style: italic; line-height: 1; letter-spacing: -.08em; }
 .hairline { height: 1px; background: var(--ink); }
 .focus-ring:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 

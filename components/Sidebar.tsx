@@ -8,7 +8,7 @@ export default function Sidebar() {
 
   return (
     <aside className="fixed left-0 top-0 z-50 flex h-screen w-[var(--rail)] flex-col items-center justify-between border-r border-border-light bg-cream py-5 max-md:hidden">
-      <div className="editorial-face text-2xl italic">Ki.</div>
+      <div className="sidebar-mark">Ki.</div>
       <div className="flex h-96 items-center justify-center">
         <div
           className="whitespace-nowrap text-[10px] font-bold tracking-[.34em]"

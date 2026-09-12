@@ -69,9 +69,9 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-12 pb-20 pt-32 max-md:px-5 max-md:py-28">
+    <section className="relative flex min-h-screen items-start justify-center overflow-hidden px-12 pb-20 pt-[190px] max-md:items-center max-md:px-5 max-md:py-28">
       <div className="z-10 max-w-5xl text-center">
-        <h3 className="mb-4 text-xs font-bold tracking-[.16em]">HELLO, I&apos;M</h3>
+        <h3 className="mb-4 text-sm font-bold tracking-[.16em]">HELLO, I&apos;M</h3>
         
         <h1 className="display-face mb-5 whitespace-nowrap text-[clamp(3rem,9vw,8.5rem)] leading-none tracking-[-.025em] animate-fadeInUp max-md:text-[15vw]">
           KHAWAJA IDREES
@@ -79,21 +79,21 @@ export default function Hero() {
 
         <div className="mx-auto mb-5 h-px w-10 bg-text-primary"></div>
 
-        <p className="mb-2 text-xs font-bold tracking-[.08em]">FRONTEND DEVELOPER & UI/UX ENTHUSIAST</p>
-        <p className="mb-8 text-[11px] text-text-secondary">khwajaidrees22@gmail.com</p>
+        <p className="mb-2 text-sm font-bold tracking-[.08em]">FRONTEND DEVELOPER & UI/UX ENTHUSIAST</p>
+        <p className="mb-8 text-xs text-text-secondary">khwajaidrees22@gmail.com</p>
 
         {/* Buttons */}
         <div className="mb-10 flex justify-center gap-4 max-md:flex-col max-md:items-center">
           <button
             onClick={() => scrollToSection('work')}
-            className="flex items-center justify-center gap-2 bg-text-primary px-7 py-3 text-[10px] font-bold text-cream transition-smooth hover:-translate-y-1 max-md:w-48"
+            className="flex items-center justify-center gap-2 bg-text-primary px-7 py-3 text-xs font-bold text-cream transition-smooth hover:-translate-y-1 max-md:w-48"
           >
             VIEW MY WORK
             <ArrowRight size={14} />
           </button>
           <button
             onClick={handleDownloadCV}
-            className="flex items-center justify-center gap-2 border border-text-primary px-7 py-3 text-[10px] font-bold text-text-primary transition-smooth hover:bg-text-primary hover:text-cream max-md:w-48"
+            className="flex items-center justify-center gap-2 border border-text-primary px-7 py-3 text-xs font-bold text-text-primary transition-smooth hover:bg-text-primary hover:text-cream max-md:w-48"
           >
             DOWNLOAD CV
             <Download size={14} />
@@ -101,7 +101,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <button onClick={() => scrollToSection('about')} className="mx-auto flex items-center gap-2 text-[10px] opacity-70 transition-smooth hover:opacity-100">
+        <button onClick={() => scrollToSection('about')} className="mx-auto flex items-center gap-2 text-xs opacity-70 transition-smooth hover:opacity-100">
           <Mouse size={16} />
           <span className="tracking-[.1em]">SCROLL DOWN</span>
           <ChevronDown size={13} />

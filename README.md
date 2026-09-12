@@ -374,3 +374,5 @@ Your portfolio is production-ready! Follow these steps:
 **Built with React, Next.js, TypeScript, and Tailwind CSS** ✨
 
 Designed for Khawaja Idrees - Frontend Developer & UI/UX Enthusiast
+
+# personal-portfolio

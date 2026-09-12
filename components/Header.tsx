@@ -32,19 +32,19 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-[var(--rail)] right-0 top-0 z-40 border-b border-border-light bg-cream transition-smooth max-md:left-0 ${
+      className={`fixed left-[var(--rail)] right-0 top-0 z-40 bg-cream transition-smooth max-md:left-0 ${
         scrolled ? 'backdrop-blur-sm bg-opacity-95' : ''
       }`}
     >
-      <div className="flex items-center justify-between gap-8 px-10 py-4 max-md:flex-wrap max-md:gap-3 max-md:px-5 max-md:py-3">
-        <div className="flex items-center gap-2 whitespace-nowrap text-[10px]">
+      <div className="grid grid-cols-[1fr_auto_auto] items-center gap-14 px-10 py-7 max-md:flex max-md:flex-wrap max-md:gap-3 max-md:px-5 max-md:py-3">
+        <div className="flex items-center gap-2 whitespace-nowrap text-xs">
           <Mail size={14} className="opacity-60" />
           <a href="mailto:khwajaidrees22@gmail.com" className="hover:opacity-60 transition-smooth">
             khwajaidrees22@gmail.com
           </a>
         </div>
 
-        <nav className="flex items-center gap-8 text-[10px] font-bold uppercase max-md:order-3 max-md:w-full max-md:justify-center max-md:gap-4">
+        <nav className="flex items-center gap-8 text-xs font-bold uppercase max-md:order-3 max-md:w-full max-md:justify-center max-md:gap-4">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -62,7 +62,7 @@ export default function Header() {
 
         <button
           onClick={() => scrollToSection('contact')}
-          className="whitespace-nowrap border border-text-primary px-6 py-2 text-[10px] font-bold transition-smooth hover:bg-text-primary hover:text-cream"
+          className="whitespace-nowrap border border-text-primary px-8 py-3 text-xs font-bold transition-smooth hover:bg-text-primary hover:text-cream"
         >
           CONNECT
         </button>
