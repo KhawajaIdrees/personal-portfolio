@@ -11,7 +11,7 @@ export default function Sidebar() {
       <div className="sidebar-mark">Ki.</div>
       <div className="flex h-96 items-center justify-center">
         <div
-          className="whitespace-nowrap text-[10px] font-semibold tracking-[.34em]"
+          className="whitespace-nowrap text-[15px] font-black tracking-[.34em]"
           style={{
             writingMode: 'vertical-rl',
             textOrientation: 'mixed',

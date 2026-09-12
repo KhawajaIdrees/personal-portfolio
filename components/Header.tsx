@@ -24,10 +24,10 @@ export default function Header() {
   }
 
   const navItems = [
-    { id: 'about', label: '01 About' },
-    { id: 'work', label: '02 Work' },
-    { id: 'skills', label: '03 Skills' },
-    { id: 'experience', label: '04 Experience' },
+    { id: 'about', number: '01', label: 'About' },
+    { id: 'work', number: '02', label: 'Work' },
+    { id: 'skills', number: '03', label: 'Skills' },
+    { id: 'experience', number: '04', label: 'Experience' },
   ]
 
   return (
@@ -36,15 +36,15 @@ export default function Header() {
         scrolled ? 'backdrop-blur-sm bg-opacity-95' : ''
       }`}
     >
-      <div className="grid grid-cols-[1fr_auto_auto] items-center gap-14 px-10 py-7 max-md:flex max-md:flex-wrap max-md:gap-3 max-md:px-5 max-md:py-3">
-        <div className="flex items-center gap-2 whitespace-nowrap text-xs font-semibold">
+      <div className=" grid grid-cols-[1fr_auto_auto] items-center gap-14 px-10 py-7 max-md:flex max-md:flex-wrap max-md:gap-3 max-md:px-5 max-md:py-3">
+        <div className="msg-e flex items-center gap-2 whitespace-nowrap text-xs font-semibold">
           <Mail size={15} strokeWidth={2} />
-          <a href="mailto:khwajaidrees22@gmail.com" className="hover:opacity-60 transition-smooth">
+          <a href="mailto:khwajaidrees22@gmail.com" className=" hover:opacity-60 transition-smooth">
             khwajaidrees22@gmail.com
           </a>
         </div>
 
-        <nav className="flex items-center gap-8 text-xs font-semibold uppercase max-md:order-3 max-md:w-full max-md:justify-center max-md:gap-4">
+        <nav className="nav flex items-center gap-10 text-xs font-semibold uppercase max-md:order-3 max-md:w-full max-md:justify-center max-md:gap-4">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -55,14 +55,17 @@ export default function Header() {
                   : 'border-transparent hover:border-text-primary'
               }`}
             >
-              {item.label}
+              <span className="inline-flex items-center gap-3">
+                <span className="font-bold text-text-primary">{item.number}</span>
+                <span>{item.label}</span>
+              </span>
             </button>
           ))}
         </nav>
 
         <button
           onClick={() => scrollToSection('contact')}
-          className="whitespace-nowrap border border-text-primary px-8 py-3 text-xs font-bold transition-smooth hover:bg-text-primary hover:text-cream"
+          className="whitespace-nowrap border-2 border-text-primary px-10 py-3 text-sm font-black transition-smooth hover:bg-text-primary hover:text-cream"
         >
           CONNECT
         </button>

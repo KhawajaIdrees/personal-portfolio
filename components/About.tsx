@@ -1,6 +1,7 @@
 'use client'
 
 import { User, GraduationCap, MapPin, Briefcase, Folder, Phone } from 'lucide-react'
+import Image from 'next/image'
 
 export default function About() {
   const infoCards = [
@@ -30,7 +31,13 @@ export default function About() {
           <p className="mb-9 max-w-md text-sm leading-[1.8] text-text-secondary md:text-base">
             I enjoy building responsive websites with great user experiences. I focus on writing clean code, paying attention to details and constantly learning new technologies.
           </p>
-          <div className="editorial-face text-5xl italic opacity-70">Idrees</div>
+          <Image
+            src="/about-sign.png"
+            alt="Khawaja Idrees signature"
+            width={190}
+            height={78}
+            className="h-auto w-[190px] object-contain object-left opacity-70"
+          />
         </div>
 
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2">

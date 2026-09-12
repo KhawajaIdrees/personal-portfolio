@@ -38,7 +38,8 @@ body {
 .section-label::after { content: ''; height: 1px; flex: 1; background: var(--line); }
 .display-face { font-family: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 700; }
 .editorial-face { font-family: Georgia, 'Times New Roman', serif; }
-.sidebar-mark { font-family: 'Caveat', 'Brush Script MT', 'Segoe Script', cursive; font-size: 34px; font-weight: 400; line-height: 1; letter-spacing: -.08em; }
+.sidebar-mark { font-family: 'Lucida Handwriting', 'Segoe Script', 'Brush Script MT', cursive; font-size: 34px; font-style: normal; font-weight: 400; line-height: 1; letter-spacing: -.08em; }
+.sidebar-mark { font-family: 'Monotype Corsiva', 'Edwardian Script ITC', 'Kunstler Script', 'Segoe Script', cursive; font-size: 34px; font-style: italic; font-weight: 400; line-height: 1; letter-spacing: -.08em; }
 .hairline { height: 1px; background: var(--ink); }
 .focus-ring:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
@@ -109,4 +110,21 @@ body {
 
 .sidebar-mark{
   padding: 10px;
+  font-weight: 700;
+}
+.nav{
+  display: flex;
+  align-items: center;
+  column-gap: 2.5rem;
+  font-size: 1rem;
+    font-weight: bolder;
+}
+
+.msg-e{
+  font-size: 1rem;
+    font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .nav { column-gap: 1rem; }
 }
