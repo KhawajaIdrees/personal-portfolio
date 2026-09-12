@@ -7,6 +7,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        md: '640px',
+      },
       colors: {
         'cream': '#F7F3F0',
         'text-primary': '#000000',

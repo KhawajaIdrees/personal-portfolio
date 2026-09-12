@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Download, ChevronDown, Mouse } from 'lucide-react'
+import { ArrowRight, Download, Mouse } from 'lucide-react'
 
 export default function Hero() {
   const handleDownloadCV = () => {
@@ -69,65 +69,54 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen items-start justify-center overflow-hidden px-12 pb-20 pt-[190px] max-md:items-center max-md:px-5 max-md:py-28">
-      <div className="z-10 max-w-5xl text-center">
-        <h3 className="mb-4 text-sm font-bold tracking-[.16em]">HELLO, I&apos;M</h3>
+    <section className="hero-section relative flex min-h-screen flex-col items-center justify-center px-8 pb-10 pt-20 text-center max-md:min-h-screen max-md:px-5 max-md:pb-8 max-md:pt-24">
+      <div className="z-10 flex w-full max-w-6xl flex-col items-center">
+        <h3 className="mb-7 text-lg font-semibold tracking-[.1em]">HELLO, I&apos;M</h3>
         
-        <h1 className="display-face mb-5 whitespace-nowrap text-[clamp(3rem,9vw,8.5rem)] leading-none tracking-[-.025em] animate-fadeInUp max-md:text-[15vw]">
+        <h1 className="display-face mb-7 w-full whitespace-nowrap text-[clamp(5.25rem,10vw,10rem)] leading-[.88] tracking-[.01em] animate-fadeInUp max-md:text-[15vw]">
           KHAWAJA IDREES
         </h1>
 
-        <div className="mx-auto mb-5 h-px w-10 bg-text-primary"></div>
+        <div className="mb-4 h-[2px] w-10 bg-text-primary"></div>
 
-        <p className="mb-2 text-sm font-bold tracking-[.08em]">FRONTEND DEVELOPER & UI/UX ENTHUSIAST</p>
-        <p className="mb-8 text-xs text-text-secondary">khwajaidrees22@gmail.com</p>
+        <p className="mb-3 text-lg font-semibold tracking-[.05em]">FRONTEND DEVELOPER & UI/UX ENTHUSIAST</p>
+        <p className="mb-7 text-base text-text-secondary">khwajaidrees22@gmail.com</p>
 
-        {/* Buttons */}
-        <div className="mb-10 flex justify-center gap-4 max-md:flex-col max-md:items-center">
+        <div className="mb-5 flex items-center justify-center gap-3 max-md:flex-col max-md:items-center">
           <button
             onClick={() => scrollToSection('work')}
-            className="flex items-center justify-center gap-2 bg-text-primary px-7 py-3 text-xs font-bold text-cream transition-smooth hover:-translate-y-1 max-md:w-48"
+            className="flex h-12 w-[155px] items-center justify-center gap-2 bg-text-primary text-sm font-semibold text-cream transition-smooth hover:-translate-y-1 max-md:w-52"
           >
             VIEW MY WORK
             <ArrowRight size={14} />
           </button>
           <button
             onClick={handleDownloadCV}
-            className="flex items-center justify-center gap-2 border border-text-primary px-7 py-3 text-xs font-bold text-text-primary transition-smooth hover:bg-text-primary hover:text-cream max-md:w-48"
+            className="flex h-12 w-[160px] items-center justify-center gap-2 border border-text-primary text-sm font-semibold text-text-primary transition-smooth hover:bg-text-primary hover:text-cream max-md:w-52"
           >
             DOWNLOAD CV
             <Download size={14} />
           </button>
         </div>
 
-        {/* Scroll Indicator */}
-        <button onClick={() => scrollToSection('about')} className="mx-auto flex items-center gap-2 text-xs opacity-70 transition-smooth hover:opacity-100">
-          <Mouse size={16} />
+        <button onClick={() => scrollToSection('about')} className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-2 text-sm font-semibold opacity-80 transition-smooth hover:opacity-100 max-md:bottom-12">
+          <Mouse size={19} strokeWidth={2} />
           <span className="tracking-[.1em]">SCROLL DOWN</span>
-          <ChevronDown size={13} />
         </button>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute right-12 top-20 opacity-20 max-md:hidden">
-        <div className="grid grid-cols-3 gap-3">
-          {[...Array(9)].map((_, i) => (
-            <div key={i} className="h-1 w-1 rounded-full bg-text-primary"></div>
+      <div className="absolute right-10 top-28 z-10 opacity-45 max-md:hidden">
+        <div className="grid grid-cols-6 gap-[11px]">
+          {[...Array(36)].map((_, i) => (
+            <div key={i} className="h-[3px] w-[3px] rounded-full bg-text-primary"></div>
           ))}
         </div>
       </div>
 
       {/* Scroll Circle */}
-      <button onClick={() => scrollToSection('about')} aria-label="Scroll to explore" className="absolute bottom-16 right-12 h-28 w-28 opacity-70 max-md:hidden">
-        <svg viewBox="0 0 100 100" className="w-full h-full">
-          <defs>
-            <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none" />
-          </defs>
-          <text fontSize="8" letterSpacing="2" fill="currentColor">
-            <textPath href="#circlePath" startOffset="0%">SCROLL TO EXPLORE</textPath>
-          </text>
-        </svg>
-        <span className="absolute inset-0 flex items-center justify-center text-2xl font-light">↓</span>
+      <button onClick={() => scrollToSection('about')} aria-label="Scroll to explore" className="absolute bottom-16 right-12 h-28 w-28 overflow-visible border-0 p-0 opacity-85 no-underline max-md:hidden">
+        <img src="/scroll-to-explore.png" alt="Scroll to explore" className="h-full w-full object-contain" />
       </button>
     </section>
   )

@@ -37,10 +37,10 @@ export default function Experience() {
           {experiences.map((exp, i) => (
             <div key={i} className="relative pt-5">
               <div className="absolute -top-[5px] left-0 h-2 w-2 rounded-full bg-text-primary"></div>
-              <p className="mb-2 text-[10px] font-bold opacity-60">{exp.date}</p>
-              <h4 className="mb-1 text-sm font-bold">{exp.title}</h4>
-              <p className="mb-2 text-[10px] font-bold opacity-70">{exp.company}</p>
-              <p className="max-w-xs text-[10px] leading-relaxed text-text-secondary">
+              <p className="mb-2 text-[11px] font-bold opacity-60">{exp.date}</p>
+              <h4 className="mb-1 text-[13px] font-bold">{exp.title}</h4>
+              <p className="mb-2 text-[11px] font-bold opacity-70">{exp.company}</p>
+              <p className="max-w-xs text-[11px] leading-[1.5] text-text-secondary">
                 {exp.description}
               </p>
               </div>

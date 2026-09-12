@@ -79,7 +79,7 @@ export default function Connect() {
       <div className="grid items-center gap-12 md:grid-cols-[.65fr_1.35fr]">
         <div>
           <div className="section-label mb-8"><span>05</span><span>LET&apos;S CONNECT</span></div>
-          <h2 className="editorial-face mb-4 text-2xl leading-tight md:text-[27px]">
+          <h2 className="editorial-face mb-4 text-[26px] leading-tight md:text-[27px]">
             Let&apos;s build something amazing together.
           </h2>
           <p className="text-xs leading-relaxed text-text-secondary">
@@ -98,7 +98,7 @@ export default function Connect() {
                 onClick={card.onClick ? (e) => { e.preventDefault(); card.onClick?.() } : undefined}
                 target={card.isExternal ? '_blank' : undefined}
                 rel={card.isExternal ? 'noopener noreferrer' : undefined}
-                className="border border-border-light p-5 transition-smooth hover:-translate-y-1 hover:bg-white/30 group"
+                className="min-h-[125px] border border-border-light p-5 transition-smooth hover:-translate-y-1 hover:bg-white/30 group"
               >
                 <Icon size={22} className="mb-4" strokeWidth={1.5} />
                 <p className="mb-2 text-[10px] font-bold tracking-widest opacity-70">{card.label}</p>

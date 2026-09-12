@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="site-shell">
       <Sidebar />
-      <main className="site-main">
+      <main className="site-main overflow-visible">
         <Header />
         <Hero />
         <About />

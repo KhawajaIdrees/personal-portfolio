@@ -46,7 +46,7 @@ export default function Contact() {
 
       <div className="grid gap-12 md:grid-cols-[.9fr_.8fr_1.3fr]">
         <div>
-          <h3 className="editorial-face mb-4 text-2xl leading-tight md:text-[25px]">
+          <h3 className="editorial-face mb-4 text-[25px] leading-tight md:text-[26px]">
             Have a project in mind or want to say hello?
           </h3>
           <p className="text-xs text-text-secondary">
@@ -54,7 +54,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="space-y-4 text-xs">
+        <div className="space-y-4 text-[12px]">
           <div className="flex items-start gap-3">
             <Mail size={16} className="mt-1 opacity-70 flex-shrink-0" />
             <span>khwajaidrees22@gmail.com</span>

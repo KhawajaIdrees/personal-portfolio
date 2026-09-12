@@ -9,7 +9,7 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="section-shell">
+    <section id="skills" className="section-shell py-12">
       <div className="section-label">
         <span className="text-xs font-semibold tracking-widest">02</span>
         <div className="flex items-center gap-4 flex-1">
@@ -21,8 +21,8 @@ export default function Skills() {
       <div className="grid grid-cols-9 max-md:grid-cols-3">
         {skills.map((skill, i) => (
           <div key={i} className="flex flex-col items-center gap-2 border-r border-border-light py-2 last:border-r-0 transition-smooth hover:scale-105">
-            <img src={`https://cdn.simpleicons.org/${skill.icon}/${skill.color}`} alt={`${skill.name} logo`} className="h-9 w-9 object-contain" />
-            <span className="text-[11px] font-bold tracking-wide">{skill.name}</span>
+            <img src={`https://cdn.simpleicons.org/${skill.icon}/${skill.color}`} alt={`${skill.name} logo`} className="h-8 w-8 object-contain" />
+            <span className="text-[10px] font-semibold tracking-wide">{skill.name}</span>
           </div>
         ))}
       </div>
