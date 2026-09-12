@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --paper: #f7f3f0;
+  --ink: #050505;
+  --muted: #5c5854;
+  --line: #d9d5d1;
+  --rail: 78px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.site-shell { min-height: 100vh; }
+.site-main { margin-left: var(--rail); }
+.section-shell { padding: 42px 46px; border-top: 1px solid var(--line); }
+.section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.section-label::after { content: ''; height: 1px; flex: 1; background: var(--line); }
+.display-face { font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
+.editorial-face { font-family: Georgia, 'Times New Roman', serif; }
+.hairline { height: 1px; background: var(--ink); }
+.focus-ring:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-fadeInUp { animation: fadeInUp .8s ease both; }
+.animate-slideIn { animation: slideIn .3s ease; }
+.animate-slideOut { animation: slideOut .3s ease; }
+.animate-rotate-slow { animation: rotate 30s linear infinite; }
+.animate-heartbeat { animation: heartbeat 1.2s ease-in-out infinite; }
+.transition-smooth { transition: all .25s ease; }
+
+@media (max-width: 768px) {
+  :root { --rail: 0px; }
+  .site-main { margin-left: 0; }
+  .section-shell { padding: 34px 20px; }
+}
