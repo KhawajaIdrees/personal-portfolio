@@ -106,3 +106,7 @@ body {
   .hero-section { min-height: 100vh; }
   .section-shell { padding: 55px 20px; }
 }
+
+.sidebar-mark{
+  padding: 10px;
+}

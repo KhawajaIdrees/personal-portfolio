@@ -18,7 +18,7 @@ export default function Sidebar() {
             transform: 'rotate(180deg)',
           }}
         >
-          KHWAJA IDREES
+          KHAWAJA IDREES
         </div>
       </div>
 

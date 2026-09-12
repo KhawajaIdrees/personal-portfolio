@@ -79,20 +79,19 @@ export default function Hero() {
 
         <div className="mb-4 h-[2px] w-10 bg-text-primary"></div>
 
-        <p className="mb-3 text-lg font-semibold tracking-[.05em]">FRONTEND DEVELOPER & UI/UX ENTHUSIAST</p>
-        <p className="mb-7 text-base text-text-secondary">khwajaidrees22@gmail.com</p>
+        <p className="mb-3 px-10 py-10 text-lg font-extrabold tracking-[.05em]">FULL STACK DEVELOPER</p>
 
-        <div className="mb-5 flex items-center justify-center gap-3 max-md:flex-col max-md:items-center">
+        <div className="mb-5 flex items-center justify-center gap-7 max-md:flex-col max-md:items-center">
           <button
             onClick={() => scrollToSection('work')}
-            className="flex h-12 w-[155px] items-center justify-center gap-2 bg-text-primary text-sm font-semibold text-cream transition-smooth hover:-translate-y-1 max-md:w-52"
+            className="flex h-12 w-[185px] items-center justify-center gap-2 bg-text-primary text-sm font-semibold text-cream transition-smooth hover:-translate-y-1 max-md:w-56"
           >
             VIEW MY WORK
             <ArrowRight size={14} />
           </button>
           <button
             onClick={handleDownloadCV}
-            className="flex h-12 w-[160px] items-center justify-center gap-2 border border-text-primary text-sm font-semibold text-text-primary transition-smooth hover:bg-text-primary hover:text-cream max-md:w-52"
+            className="flex h-12 w-[190px] items-center justify-center gap-2 border border-text-primary text-sm font-semibold text-text-primary transition-smooth hover:bg-text-primary hover:text-cream max-md:w-56"
           >
             DOWNLOAD CV
             <Download size={14} />
