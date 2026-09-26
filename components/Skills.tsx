@@ -45,7 +45,7 @@ export default function Skills() {
                   ) : (
                     <img src={skill.src ?? `https://cdn.simpleicons.org/${skill.icon}/${skill.color}`} alt="" className="h-8 w-8 object-contain" />
                   )}
-                  <span className={`text-sm font-semibold ${skill.name === 'JavaScript' ? 'text-black' : ''}`}>{skill.name}</span>
+                  <span className="text-sm font-semibold text-text-secondary">{skill.name}</span>
                 </li>
               ))}
             </ul>

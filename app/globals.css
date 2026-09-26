@@ -9,9 +9,9 @@
 }
 
 :root {
-  --paper: #f7f3f0;
+  --paper: rgb(235, 233, 228);
   --ink: #050505;
-  --muted: #5c5854;
+  --muted: #555555;
   --line: #d9d5d1;
   --rail: 80px;
 }
@@ -27,6 +27,29 @@ body {
   line-height: 1.6;
 }
 
+.site-cursor {
+  position: fixed;
+  z-index: 100;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--paper);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: opacity .12s ease, background-color .12s ease;
+}
+
+.site-cursor-on-dark { background: var(--paper); }
+
+@media (pointer: fine) {
+  .custom-cursor-enabled,
+  .custom-cursor-enabled * {
+    cursor: none !important;
+  }
+}
+
 .site-shell { min-height: 100vh; }
 .site-main { width: calc(100% - var(--rail)); margin-left: var(--rail); }
 .site-main > section,
@@ -34,7 +57,7 @@ body {
 .site-main > section { scroll-margin-top: 88px; }
 .hero-section { min-height: 100vh; flex-shrink: 0; overflow: visible; }
 .section-shell { padding: 60px 40px; border-top: 1px solid var(--line); }
-.section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .display-face { font-family: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 700; }
 .editorial-face { font-family: Georgia, 'Times New Roman', serif; }
 .sidebar-mark { font-family: 'Lucida Handwriting', 'Segoe Script', 'Brush Script MT', cursive; font-size: 34px; font-style: normal; font-weight: 400; line-height: 1; letter-spacing: -.08em; }

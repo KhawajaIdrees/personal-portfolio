@@ -37,14 +37,14 @@ export default function Header() {
       }`}
     >
       <div className=" grid grid-cols-[1fr_auto_auto] items-center gap-14 px-10 py-7 max-md:flex max-md:flex-wrap max-md:gap-3 max-md:px-5 max-md:py-3">
-        <div className="msg-e flex items-center gap-2 whitespace-nowrap text-xs font-semibold">
+        <div className="msg-e flex items-center gap-2 whitespace-nowrap text-xs font-semibold text-text-secondary">
           <Mail size={15} strokeWidth={2} />
           <a href="mailto:khwajaidrees22@gmail.com" className=" hover:opacity-60 transition-smooth">
             khwajaidrees22@gmail.com
           </a>
         </div>
 
-        <nav className="nav flex items-center gap-10 text-xs font-semibold uppercase max-md:order-3 max-md:w-full max-md:justify-center max-md:gap-4">
+        <nav className="nav flex items-center gap-10 text-xs font-semibold uppercase text-text-secondary max-md:order-3 max-md:w-full max-md:justify-center max-md:gap-4">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -56,7 +56,7 @@ export default function Header() {
               }`}
             >
               <span className="inline-flex items-center gap-3">
-                <span className="font-bold text-text-primary">{item.number}</span>
+                <span className="font-bold text-text-secondary">{item.number}</span>
                 <span>{item.label}</span>
               </span>
             </button>

@@ -11,9 +11,9 @@ const config: Config = {
         md: '640px',
       },
       colors: {
-        'cream': '#F7F3F0',
+        'cream': 'var(--paper)',
         'text-primary': '#000000',
-        'text-secondary': '#333333',
+        'text-secondary': '#555555',
         'border-light': '#D9D5D1',
       },
       fontFamily: {

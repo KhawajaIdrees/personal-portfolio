@@ -101,7 +101,7 @@ export default function Connect() {
                 className="min-h-[125px] border border-border-light p-5 transition-smooth hover:-translate-y-1 hover:bg-white/30 group"
               >
                 <Icon size={22} className="mb-4" strokeWidth={1.5} />
-                <p className="mb-2 text-[10px] font-bold tracking-widest opacity-70">{card.label}</p>
+                <p className="mb-2 text-[10px] font-bold tracking-widest text-text-secondary">{card.label}</p>
                 <p className="mb-3 text-[10px] leading-relaxed text-text-secondary">{card.value}</p>
                 {card.isDownload ? (
                   <Download size={14} className="text-text-primary opacity-60" />
