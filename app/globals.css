@@ -48,6 +48,13 @@ body {
   will-change: left, top;
 }
 
+.contact-nav-button:hover,
+.contact-nav-button:focus-visible {
+  background-color: var(--token-f89e5f94-764f-452e-9eeb-7398648b9437, #fb6107);
+  border-color: var(--token-f89e5f94-764f-452e-9eeb-7398648b9437, #fb6107);
+  color: var(--ink);
+}
+
 @media (pointer: fine) {
   .custom-cursor-enabled,
   .custom-cursor-enabled * {
