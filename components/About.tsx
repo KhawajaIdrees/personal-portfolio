@@ -1,16 +1,13 @@
 'use client'
 
-import { User, GraduationCap, MapPin, Briefcase, Folder, Phone } from 'lucide-react'
+import { GraduationCap, MapPin, Folder } from 'lucide-react'
 import Image from 'next/image'
 
 export default function About() {
-  const infoCards = [
-    { icon: User, label: 'NAME', value: 'Khawaja Idrees' },
+  const infoRows = [
     { icon: GraduationCap, label: 'EDUCATION', value: 'BS Information Technology' },
+    { icon: Folder, label: 'PROJECTS', value: '5+ completed' },
     { icon: MapPin, label: 'LOCATION', value: 'Based, Pakistan' },
-    { icon: Briefcase, label: 'EXPERIENCE', value: '3+ Years' },
-    { icon: Folder, label: 'PROJECTS', value: '5+ Completed' },
-    { icon: Phone, label: 'PHONE', value: '+92 312 4567890' },
   ]
 
   return (
@@ -41,19 +38,24 @@ export default function About() {
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2">
-          {infoCards.map((card, i) => {
-            const Icon = card.icon
-            return (
-              <div key={i} className="flex min-h-[106px] items-center gap-4 border border-border-light px-5 py-4 transition-smooth hover:bg-white/40">
-                <Icon size={28} className="shrink-0" strokeWidth={1.5} />
-                <div>
-                  <p className="mb-1 text-xs font-bold tracking-widest opacity-70">{card.label}</p>
-                  <p className="text-sm font-medium leading-tight">{card.value}</p>
+        <div className="flex flex-col items-start pt-1 md:border-l md:border-border-light md:pl-10 md:pt-2">
+          <p className="mb-10 max-w-lg text-sm leading-[1.9] text-text-secondary md:mb-12 md:text-base">
+            I’m always exploring, learning and improving my skills. Outside of coding, I enjoy working on personal projects, reading, and staying up to date with the latest in tech.
+          </p>
+          <div className="flex w-full max-w-lg flex-col gap-7 md:gap-8">
+            {infoRows.map((row) => {
+              const Icon = row.icon
+              return (
+                <div key={row.label} className="flex items-start gap-4">
+                  <Icon size={18} className="mt-0.5 shrink-0 text-text-secondary" strokeWidth={1.4} aria-hidden="true" />
+                  <div>
+                    <p className="mb-1 text-[10px] font-semibold tracking-widest text-text-secondary">{row.label}</p>
+                    <p className="text-sm font-normal leading-relaxed md:text-base">{row.value}</p>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>
