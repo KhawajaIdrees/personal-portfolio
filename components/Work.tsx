@@ -6,7 +6,7 @@ export default function Work() {
   const projects = [
     { year: '2026', category: 'AI RESUME BUILDER', name: 'RECRUMA', href: 'https://recruma-3k2a.vercel.app/', preview: '/recruma.png' },
     { year: '2026', category: 'PREMIUM E-COMMERCE', name: 'MORT', href: 'https://mort-pink.vercel.app/', preview: '/mort.png' },
-    { year: '2026', category: 'E-COMMERCE STORE', name: 'WALK AND TALK', href: 'https://walk-n-talk-eight.vercel.app/', preview: '/walk-n-talk.png' },
+    { year: '2026', category: 'E-COMMERCE STORE', name: "WALK 'N' TALK", href: 'https://walk-n-talk-eight.vercel.app/', preview: '/walk-n-talk.png' },
     { year: '2026', category: 'RESTAURANT', name: 'ANATOLYA FOOD' },
     { year: '2025', category: 'LANDSCAPING', name: 'SB SOLARTECH' },
   ]
@@ -28,24 +28,15 @@ export default function Work() {
             href={project.href ?? '#'}
             target={project.href ? '_blank' : undefined}
             rel={project.href ? 'noopener noreferrer' : undefined}
-            onPointerMove={(event) => {
-              if (event.pointerType !== 'mouse' || !project.href) return
-              const bounds = event.currentTarget.getBoundingClientRect()
-              const tooltipWidth = 112
-              const tooltipHeight = 28
-              const left = Math.max(8, Math.min(event.clientX - bounds.left + 14, bounds.width - tooltipWidth - 8))
-              const top = Math.max(8, Math.min(event.clientY - bounds.top + 14, bounds.height - tooltipHeight - 8))
-              event.currentTarget.style.setProperty('--live-link-left', `${left}px`)
-              event.currentTarget.style.setProperty('--live-link-top', `${top}px`)
-            }}
-            className="group relative mx-3 grid min-h-[112px] grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-3 rounded-sm border-b border-border-light px-4 py-5 transition-smooth hover:z-10 hover:scale-[1.01] hover:border-white/30 hover:bg-[#111111] hover:text-cream focus-visible:z-10 focus-visible:scale-[1.01] focus-visible:border-white/30 focus-visible:bg-[#111111] focus-visible:text-cream md:mx-4 md:min-h-[120px] md:grid-cols-[.65fr_1.8fr_112px_20px] md:gap-3 md:px-5 lg:min-h-[120px] lg:grid-cols-[.65fr_1.8fr_176px_20px] lg:gap-5"
+            data-project-row
+            className={`group relative mx-3 grid min-h-[100px] grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 rounded-sm border-b border-border-light px-4 py-3 transition-smooth hover:z-10 hover:rounded-md hover:border-white/30 hover:bg-[#111111] hover:text-cream focus-visible:z-10 focus-visible:rounded-md focus-visible:border-white/30 focus-visible:bg-[#111111] focus-visible:text-cream md:mx-4 md:min-h-[100px] md:grid-cols-[.95fr_144px_1.8fr_20px] md:gap-3 md:px-5 md:py-1 lg:grid-cols-[.95fr_208px_1.8fr_20px] ${project.preview ? 'md:hover:min-h-[144px] md:focus-visible:min-h-[144px] lg:hover:min-h-[168px] lg:focus-visible:min-h-[168px]' : ''}`}
           >
             {/* Meta */}
             <div className="col-span-2 font-mono text-base font-normal text-text-secondary transition-smooth group-hover:text-cream group-focus-visible:text-cream md:col-span-1 md:col-start-1 md:row-start-1 md:text-sm lg:text-lg">
               <p>{project.year}, {project.category}</p>
               {project.href && (
                 <span
-                  className="live-website-cursor pointer-events-none absolute left-[var(--live-link-left,16px)] top-[var(--live-link-top,16px)] z-10 inline-flex h-7 items-center gap-2 whitespace-nowrap bg-cream px-2.5 font-sans text-[9px] font-bold tracking-wide text-text-primary opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 max-md:opacity-100"
+                  className="live-website-cursor pointer-events-none absolute left-[var(--live-link-left,16px)] top-[var(--live-link-top,16px)] z-30 inline-flex h-7 items-center gap-2 whitespace-nowrap bg-cream px-2.5 font-sans text-[9px] font-bold tracking-wide text-text-primary opacity-0 group-focus-visible:opacity-100"
                   style={{ left: 'var(--live-link-left, 16px)', top: 'var(--live-link-top, 16px)' }}
                 >
                   <ExternalLink size={12} strokeWidth={1.8} aria-hidden="true" />
@@ -55,19 +46,45 @@ export default function Work() {
             </div>
 
             {/* Project Name */}
-            <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-1">
+            <div className="col-start-1 row-start-2 md:col-start-3 md:row-start-1">
               <h3 className="display-face text-[36px] leading-none transition-smooth group-hover:text-cream group-focus-visible:text-cream md:text-[40px] lg:text-[52px]">
                 {project.name}
               </h3>
             </div>
 
             {project.preview && (
-              <img
-                src={project.preview}
-                alt={`${project.name} website preview`}
-                loading="lazy"
-                className="col-span-2 hidden aspect-[3/2] w-[112px] scale-95 object-cover opacity-0 transition-smooth group-hover:z-20 group-hover:scale-[1.12] group-hover:opacity-100 group-focus-visible:z-20 group-focus-visible:scale-[1.12] group-focus-visible:opacity-100 md:col-span-1 md:col-start-3 md:row-start-1 md:block lg:w-[176px]"
-              />
+              <div className="relative col-span-2 hidden h-0 w-full md:col-span-1 md:col-start-2 md:row-start-1 md:block">
+                <img
+                  src={project.preview}
+                  alt={`${project.name} website preview`}
+                  loading="lazy"
+                  onPointerEnter={(event) => {
+                    if (event.pointerType !== 'mouse') return
+                    const row = event.currentTarget.closest('[data-project-row]') as HTMLElement | null
+                    row?.querySelector<HTMLElement>('.live-website-cursor')?.style.setProperty('opacity', '1')
+                  }}
+                  onPointerMove={(event) => {
+                    if (event.pointerType !== 'mouse') return
+                    const row = event.currentTarget.closest('[data-project-row]') as HTMLElement | null
+                    const badge = row?.querySelector<HTMLElement>('.live-website-cursor')
+                    if (!row || !badge) return
+
+                    const rowBounds = row.getBoundingClientRect()
+                    const imageBounds = event.currentTarget.getBoundingClientRect()
+                    const badgeWidth = badge.offsetWidth || 112
+                    const badgeHeight = badge.offsetHeight || 28
+                    const imageX = Math.max(8, Math.min(event.clientX - imageBounds.left + 8, imageBounds.width - badgeWidth - 8))
+                    const imageY = Math.max(8, Math.min(event.clientY - imageBounds.top + 8, imageBounds.height - badgeHeight - 8))
+                    row.style.setProperty('--live-link-left', `${imageBounds.left - rowBounds.left + imageX}px`)
+                    row.style.setProperty('--live-link-top', `${imageBounds.top - rowBounds.top + imageY}px`)
+                  }}
+                  onPointerLeave={(event) => {
+                    const row = event.currentTarget.closest('[data-project-row]') as HTMLElement | null
+                    row?.querySelector<HTMLElement>('.live-website-cursor')?.style.setProperty('opacity', '0')
+                  }}
+                  className="absolute left-[-29px] top-1/2 z-20 h-[90px] w-[184px] -translate-y-1/2 scale-95 rounded-xl border border-[#999999] object-cover opacity-0 transition-smooth group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 lg:h-[118px] lg:w-[240px]"
+                />
+              </div>
             )}
 
             {/* Link Button */}

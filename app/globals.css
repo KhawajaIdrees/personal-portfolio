@@ -44,7 +44,7 @@ body {
 .site-cursor-on-dark { background: var(--paper); }
 
 .live-website-cursor {
-  transition: left .16s cubic-bezier(.22, 1, .36, 1), top .16s cubic-bezier(.22, 1, .36, 1), opacity .12s ease;
+  transition: left .36s cubic-bezier(.22, 1, .36, 1), top .36s cubic-bezier(.22, 1, .36, 1), opacity .12s ease;
   will-change: left, top;
 }
 
