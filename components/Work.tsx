@@ -38,14 +38,14 @@ export default function Work() {
               event.currentTarget.style.setProperty('--live-link-left', `${left}px`)
               event.currentTarget.style.setProperty('--live-link-top', `${top}px`)
             }}
-            className="group relative mx-3 grid min-h-[112px] grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-3 rounded-sm border-b border-border-light px-4 py-5 transition-smooth hover:z-10 hover:scale-[1.01] hover:border-white/30 hover:bg-[#111111] hover:text-cream focus-visible:z-10 focus-visible:scale-[1.01] focus-visible:border-white/30 focus-visible:bg-[#111111] focus-visible:text-cream md:mx-4 md:min-h-[120px] md:grid-cols-[.65fr_1.8fr_92px_20px] md:gap-3 md:px-5 lg:min-h-[120px] lg:grid-cols-[.65fr_1.8fr_144px_20px] lg:gap-5"
+            className="group relative mx-3 grid min-h-[112px] grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-3 rounded-sm border-b border-border-light px-4 py-5 transition-smooth hover:z-10 hover:scale-[1.01] hover:border-white/30 hover:bg-[#111111] hover:text-cream focus-visible:z-10 focus-visible:scale-[1.01] focus-visible:border-white/30 focus-visible:bg-[#111111] focus-visible:text-cream md:mx-4 md:min-h-[120px] md:grid-cols-[.65fr_1.8fr_112px_20px] md:gap-3 md:px-5 lg:min-h-[120px] lg:grid-cols-[.65fr_1.8fr_176px_20px] lg:gap-5"
           >
             {/* Meta */}
             <div className="col-span-2 font-mono text-base font-normal text-text-secondary transition-smooth group-hover:text-cream group-focus-visible:text-cream md:col-span-1 md:col-start-1 md:row-start-1 md:text-sm lg:text-lg">
               <p>{project.year}, {project.category}</p>
               {project.href && (
                 <span
-                  className="pointer-events-none absolute left-[var(--live-link-left,16px)] top-[var(--live-link-top,16px)] z-10 inline-flex h-7 items-center gap-2 whitespace-nowrap bg-cream px-2.5 font-sans text-[9px] font-bold tracking-wide text-text-primary opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 max-md:opacity-100"
+                  className="live-website-cursor pointer-events-none absolute left-[var(--live-link-left,16px)] top-[var(--live-link-top,16px)] z-10 inline-flex h-7 items-center gap-2 whitespace-nowrap bg-cream px-2.5 font-sans text-[9px] font-bold tracking-wide text-text-primary opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 max-md:opacity-100"
                   style={{ left: 'var(--live-link-left, 16px)', top: 'var(--live-link-top, 16px)' }}
                 >
                   <ExternalLink size={12} strokeWidth={1.8} aria-hidden="true" />
@@ -66,7 +66,7 @@ export default function Work() {
                 src={project.preview}
                 alt={`${project.name} website preview`}
                 loading="lazy"
-                className="col-span-2 hidden aspect-[3/2] w-[92px] scale-95 object-cover opacity-0 transition-smooth group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 md:col-span-1 md:col-start-3 md:row-start-1 md:block lg:w-[144px]"
+                className="col-span-2 hidden aspect-[3/2] w-[112px] scale-95 object-cover opacity-0 transition-smooth group-hover:z-20 group-hover:scale-[1.12] group-hover:opacity-100 group-focus-visible:z-20 group-focus-visible:scale-[1.12] group-focus-visible:opacity-100 md:col-span-1 md:col-start-3 md:row-start-1 md:block lg:w-[176px]"
               />
             )}
 
