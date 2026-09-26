@@ -1,6 +1,7 @@
 'use client'
 
 import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Work() {
   const projects = [
@@ -54,9 +55,13 @@ export default function Work() {
 
             {project.preview && (
               <div className="relative col-span-2 hidden h-0 w-full md:col-span-1 md:col-start-2 md:row-start-1 md:block">
-                <img
+                <Image
                   src={project.preview}
                   alt={`${project.name} website preview`}
+                  width={240}
+                  height={118}
+                  quality={100}
+                  sizes="(min-width: 1024px) 240px, 184px"
                   loading="lazy"
                   onPointerEnter={(event) => {
                     if (event.pointerType !== 'mouse') return
