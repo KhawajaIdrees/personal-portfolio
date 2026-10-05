@@ -30,6 +30,34 @@ export default function Work() {
             target={project.href ? '_blank' : undefined}
             rel={project.href ? 'noopener noreferrer' : undefined}
             data-project-row
+            onPointerEnter={(event) => {
+              if (event.pointerType !== 'mouse' || !project.href) return
+              const row = event.currentTarget as HTMLElement
+              const badge = row.querySelector<HTMLElement>('.live-website-cursor')
+              if (!badge) return
+              badge.style.opacity = '1'
+            }}
+            onPointerMove={(event) => {
+              if (event.pointerType !== 'mouse' || !project.href) return
+              const row = event.currentTarget as HTMLElement
+              const badge = row.querySelector<HTMLElement>('.live-website-cursor')
+              if (!badge) return
+
+              const rowBounds = row.getBoundingClientRect()
+              const badgeWidth = badge.offsetWidth || 112
+              const badgeHeight = badge.offsetHeight || 28
+              const x = Math.max(8, Math.min(event.clientX - rowBounds.left + 12, rowBounds.width - badgeWidth - 12))
+              const y = Math.max(8, Math.min(event.clientY - rowBounds.top + 12, rowBounds.height - badgeHeight - 8))
+
+              row.style.setProperty('--live-link-left', `${x}px`)
+              row.style.setProperty('--live-link-top', `${y}px`)
+            }}
+            onPointerLeave={(event) => {
+              if (!project.href) return
+              const row = event.currentTarget as HTMLElement
+              const badge = row.querySelector<HTMLElement>('.live-website-cursor')
+              if (badge) badge.style.opacity = '0'
+            }}
             className={`group relative mx-3 grid min-h-[100px] grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 rounded-sm border-b border-border-light px-4 py-3 transition-smooth hover:z-10 hover:rounded-md hover:border-white/30 hover:bg-[#111111] hover:text-cream focus-visible:z-10 focus-visible:rounded-md focus-visible:border-white/30 focus-visible:bg-[#111111] focus-visible:text-cream md:mx-4 md:min-h-[100px] md:grid-cols-[.95fr_144px_1.8fr_20px] md:gap-3 md:px-5 md:py-1 lg:grid-cols-[.95fr_208px_1.8fr_20px] ${project.preview ? 'md:hover:min-h-[144px] md:focus-visible:min-h-[144px] lg:hover:min-h-[168px] lg:focus-visible:min-h-[168px]' : ''}`}
           >
             {/* Meta */}
@@ -37,7 +65,7 @@ export default function Work() {
               <p>{project.year}, {project.category}</p>
               {project.href && (
                 <span
-                  className="live-website-cursor pointer-events-none absolute left-[var(--live-link-left,16px)] top-[var(--live-link-top,16px)] z-30 inline-flex h-7 items-center gap-2 whitespace-nowrap bg-cream px-2.5 font-sans text-[9px] font-bold tracking-wide text-text-primary opacity-0 group-focus-visible:opacity-100"
+                  className="live-website-cursor pointer-events-none absolute left-[var(--live-link-left,16px)] top-[var(--live-link-top,16px)] z-30 inline-flex h-7 items-center gap-2 whitespace-nowrap bg-cream px-2.5 font-sans text-[9px] font-bold tracking-wide text-text-primary opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
                   style={{ left: 'var(--live-link-left, 16px)', top: 'var(--live-link-top, 16px)' }}
                 >
                   <ExternalLink size={12} strokeWidth={1.8} aria-hidden="true" />
@@ -63,30 +91,6 @@ export default function Work() {
                   quality={100}
                   sizes="(min-width: 1024px) 240px, 184px"
                   loading="lazy"
-                  onPointerEnter={(event) => {
-                    if (event.pointerType !== 'mouse') return
-                    const row = event.currentTarget.closest('[data-project-row]') as HTMLElement | null
-                    row?.querySelector<HTMLElement>('.live-website-cursor')?.style.setProperty('opacity', '1')
-                  }}
-                  onPointerMove={(event) => {
-                    if (event.pointerType !== 'mouse') return
-                    const row = event.currentTarget.closest('[data-project-row]') as HTMLElement | null
-                    const badge = row?.querySelector<HTMLElement>('.live-website-cursor')
-                    if (!row || !badge) return
-
-                    const rowBounds = row.getBoundingClientRect()
-                    const imageBounds = event.currentTarget.getBoundingClientRect()
-                    const badgeWidth = badge.offsetWidth || 112
-                    const badgeHeight = badge.offsetHeight || 28
-                    const imageX = Math.max(8, Math.min(event.clientX - imageBounds.left + 8, imageBounds.width - badgeWidth - 8))
-                    const imageY = Math.max(8, Math.min(event.clientY - imageBounds.top + 8, imageBounds.height - badgeHeight - 8))
-                    row.style.setProperty('--live-link-left', `${imageBounds.left - rowBounds.left + imageX}px`)
-                    row.style.setProperty('--live-link-top', `${imageBounds.top - rowBounds.top + imageY}px`)
-                  }}
-                  onPointerLeave={(event) => {
-                    const row = event.currentTarget.closest('[data-project-row]') as HTMLElement | null
-                    row?.querySelector<HTMLElement>('.live-website-cursor')?.style.setProperty('opacity', '0')
-                  }}
                   className="absolute left-[-29px] top-1/2 z-20 h-[90px] w-[184px] -translate-y-1/2 scale-95 rounded-xl border border-[#999999] object-cover opacity-0 transition-smooth group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 lg:h-[118px] lg:w-[240px]"
                 />
               </div>
