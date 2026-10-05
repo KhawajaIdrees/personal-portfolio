@@ -48,11 +48,86 @@ body {
   will-change: left, top;
 }
 
+.nav-pill,
+.contact-nav-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .25s ease, background-color .25s ease;
+}
+
+.nav-pill::before,
+.contact-nav-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  z-index: 0;
+  transition: height .42s cubic-bezier(.2, .8, .2, 1), background-color .25s ease;
+}
+
+.nav-pill > span,
+.contact-nav-button,
+.contact-label {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-pill {
+  background: transparent;
+  color: var(--ink);
+}
+
+.nav-pill::before {
+  background: rgba(0, 0, 0, 1);
+}
+
+.nav-pill:hover::before,
+.nav-pill:focus-visible::before {
+  height: 100%;
+}
+
+.nav-pill:hover,
+.nav-pill:focus-visible {
+  border-color: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(5, 5, 5, 0.08);
+}
+
+.contact-nav-button {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.contact-nav-button::before {
+  background: #fb6107;
+}
+
+.contact-nav-button:hover::before,
+.contact-nav-button:focus-visible::before {
+  height: 100%;
+  background: #fb6107;
+}
+
 .contact-nav-button:hover,
 .contact-nav-button:focus-visible {
-  background-color: var(--token-f89e5f94-764f-452e-9eeb-7398648b9437, #fb6107);
-  border-color: var(--token-f89e5f94-764f-452e-9eeb-7398648b9437, #fb6107);
+  border-color: #fb6107;
   color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(251, 97, 7, 0.18);
+}
+
+.contact-nav-button:hover .contact-label,
+.contact-nav-button:focus-visible .contact-label {
+  color: var(--ink);
+}
+
+.contact-nav-button .contact-label {
+  color: var(--paper);
 }
 
 @media (pointer: fine) {

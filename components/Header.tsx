@@ -24,10 +24,10 @@ export default function Header() {
   }
 
   const navItems = [
-    { id: 'about', number: '01', label: 'About' },
-    { id: 'work', number: '02', label: 'Work' },
-    { id: 'skills', number: '03', label: 'Skills' },
-    { id: 'experience', number: '04', label: 'Experience' },
+    { id: 'about', label: 'About' },
+    { id: 'work', label: 'Work' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
   ]
 
   return (
@@ -49,25 +49,22 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`display-face inline-flex min-h-[46px] items-center whitespace-nowrap rounded-[3px] border px-4 py-2 text-base transition-smooth ${
+              className={`nav-pill display-face inline-flex min-h-[46px] items-center whitespace-nowrap rounded-[3px] border px-4 py-2 text-[16px] font-normal leading-none transition-smooth ${
                 activeNav === item.id
-                  ? 'border-text-primary bg-white/30'
-                  : 'border-border-light hover:border-text-primary hover:bg-white/30'
+                  ? 'border-text-primary bg-white/30 text-text-primary'
+                  : 'border-border-light text-text-primary hover:border-text-primary'
               }`}
             >
-              <span className="inline-flex items-center gap-3">
-                <span className="font-bold text-text-secondary">{item.number}</span>
-                <span>{item.label}</span>
-              </span>
+              <span>{item.label}</span>
             </button>
           ))}
         </nav>
 
         <button
           onClick={() => scrollToSection('contact')}
-          className="contact-nav-button display-face whitespace-nowrap rounded-[3px] border border-text-primary bg-text-primary px-7 py-3 text-base font-bold text-cream transition-smooth max-md:ml-auto"
+          className="contact-nav-button display-face whitespace-nowrap rounded-[3px] border border-text-primary bg-text-primary px-7 py-3 text-[16px] font-normal leading-none text-cream transition-smooth max-md:ml-auto"
         >
-          CONTACT
+          <span className="contact-label text-cream transition-smooth">CONTACT</span>
         </button>
       </div>
     </header>
