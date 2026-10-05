@@ -141,7 +141,7 @@ body {
 .site-main { width: calc(100% - var(--rail)); margin-left: var(--rail); }
 .site-main > section,
 .site-main > footer { width: 100%; max-width: 1360px; margin-inline: auto; }
-.site-main > section { scroll-margin-top: 88px; }
+.site-main > section { scroll-margin-top: 0; }
 .hero-section { min-height: 100vh; flex-shrink: 0; overflow: visible; }
 .section-shell { padding: 60px 40px; border-top: 1px solid var(--line); }
 .section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }

@@ -1,8 +1,37 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { ArrowRight, Download, Mouse } from 'lucide-react'
 
 export default function Hero() {
+  const heroRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const hero = heroRef.current
+
+    if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let animationFrame = 0
+
+    const updateOpacity = () => {
+      cancelAnimationFrame(animationFrame)
+      animationFrame = requestAnimationFrame(() => {
+        const progress = Math.min(window.scrollY / hero.offsetHeight, 1)
+        hero.style.opacity = String(1 - progress)
+      })
+    }
+
+    updateOpacity()
+    window.addEventListener('scroll', updateOpacity, { passive: true })
+    window.addEventListener('resize', updateOpacity)
+
+    return () => {
+      cancelAnimationFrame(animationFrame)
+      window.removeEventListener('scroll', updateOpacity)
+      window.removeEventListener('resize', updateOpacity)
+    }
+  }, [])
+
   const handleDownloadCV = () => {
     const cvContent = `
     KHAWAJA IDREES
@@ -69,7 +98,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="hero-section relative flex min-h-screen flex-col items-center justify-center px-8 pb-10 pt-20 text-center max-md:min-h-screen max-md:px-5 max-md:pb-8 max-md:pt-24">
+    <section ref={heroRef} className="hero-section relative flex min-h-screen flex-col items-center justify-center px-8 pb-10 pt-20 text-center max-md:min-h-screen max-md:px-5 max-md:pb-8 max-md:pt-24">
       <div className="z-10 flex w-full max-w-6xl flex-col items-center">
         <h3 className="mb-7 text-lg font-semibold tracking-[.1em]">HELLO, I&apos;M</h3>
         
