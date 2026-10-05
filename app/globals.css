@@ -145,16 +145,14 @@ body {
 .site-main > section { scroll-margin-top: 0; }
 .hero-section { min-height: 100vh; flex-shrink: 0; overflow: visible; }
 .section-shell { padding: 60px 40px; border-top: 1px solid var(--line); }
-.about-watermark { position: absolute; z-index: 0; right: 0; bottom: 0; width: min(47vw, 560px); height: clamp(280px, 35vw, 430px); overflow: hidden; color: var(--line); pointer-events: none; }
-.about-watermark-monogram { position: absolute; right: -.04em; bottom: -.16em; color: var(--line); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(16rem, 32vw, 29rem); font-weight: 400; line-height: .72; letter-spacing: -.09em; opacity: .48; }
-.about-watermark-rule { position: absolute; top: 4%; right: 22%; width: 1px; height: 48%; background: var(--line); opacity: .8; }
-.about-watermark-cross { position: absolute; top: 4%; right: calc(22% - 4px); width: 9px; height: 9px; }
-.about-watermark-cross::before,
-.about-watermark-cross::after { position: absolute; top: 50%; left: 50%; content: ''; background: var(--line); transform: translate(-50%, -50%); }
-.about-watermark-cross::before { width: 1px; height: 9px; }
-.about-watermark-cross::after { width: 9px; height: 1px; }
-.about-watermark-motto { position: absolute; top: 7%; right: calc(22% - 20px); color: var(--line); font-size: 8px; font-weight: 600; letter-spacing: .16em; opacity: .9; writing-mode: vertical-rl; }
-.about-watermark-diagonal { position: absolute; bottom: 15%; left: 4%; width: 34%; height: 1px; background: var(--line); opacity: .8; transform: rotate(-35deg); transform-origin: left center; }
+.about-watermark { position: absolute; z-index: 0; right: 28px; bottom: 18px; width: min(36vw, 270px); height: 190px; color: var(--line); pointer-events: none; }
+.about-watermark-monogram { position: absolute; right: 4px; bottom: 8px; color: var(--line); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(10rem, 15vw, 12rem); font-weight: 400; line-height: .72; letter-spacing: -.09em; }
+.about-watermark-motto { position: absolute; top: -174px; right: -14px; color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .08em; opacity: .62; white-space: nowrap; writing-mode: vertical-rl; }
+.about-watermark-motto::before,
+.about-watermark-motto::after { position: absolute; left: 50%; width: 1px; height: 18px; content: ''; background: var(--muted); opacity: .4; transform: translateX(-50%); }
+.about-watermark-motto::before { top: -26px; }
+.about-watermark-motto::after { bottom: -26px; }
+.about-watermark-diagonal { position: absolute; bottom: 18%; left: 3%; width: 34%; height: 1px; background: var(--line); transform: rotate(-35deg); transform-origin: left center; }
 .section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .display-face { font-family: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 700; }
 .editorial-face { font-family: Georgia, 'Times New Roman', serif; }
@@ -239,11 +237,10 @@ body {
   .site-main { width: 100%; margin-left: 0; }
   .hero-section { min-height: 100vh; }
   .section-shell { padding: 55px 20px; }
-  .about-watermark { right: -36px; width: min(76vw, 360px); height: 270px; opacity: .6; }
-  .about-watermark-monogram { right: -.03em; bottom: -.12em; font-size: clamp(15rem, 48vw, 19rem); }
-  .about-watermark-rule { right: 22%; height: 43%; }
-  .about-watermark-motto { right: calc(22% - 20px); font-size: 7px; }
-  .about-watermark-diagonal { bottom: 13%; left: 2%; width: 30%; }
+  .about-watermark { right: 16px; bottom: 12px; width: 220px; height: 165px; }
+  .about-watermark-monogram { right: 2px; bottom: 6px; font-size: 9.5rem; }
+  .about-watermark-motto { top: -170px; right: -10px; font-size: 9px; }
+  .about-watermark-diagonal { bottom: 17%; left: 3%; width: 32%; }
 }
 
 .sidebar-mark{

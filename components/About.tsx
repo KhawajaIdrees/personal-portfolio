@@ -38,7 +38,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className={`section-shell relative isolate overflow-hidden pt-20 transition-all duration-700 ease-out md:pt-24 ${
+      className={`section-shell relative isolate pt-20 transition-all duration-700 ease-out md:pt-24 ${
         isVisible ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'
       }`}
     >
@@ -105,8 +105,6 @@ export default function About() {
 
       <div className="about-watermark" aria-hidden="true">
         <span className="about-watermark-monogram">Ki</span>
-        <span className="about-watermark-rule" />
-        <span className="about-watermark-cross" />
         <span className="about-watermark-motto">BUILD · LEARN · GROW</span>
         <span className="about-watermark-diagonal" />
       </div>
