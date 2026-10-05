@@ -38,11 +38,11 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className={`section-shell pt-20 transition-all duration-700 ease-out md:pt-24 ${
+      className={`section-shell relative isolate overflow-hidden pt-20 transition-all duration-700 ease-out md:pt-24 ${
         isVisible ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'
       }`}
     >
-      <div className="section-label about-section-label">
+      <div className="section-label about-section-label relative z-10">
         <span className="text-xs font-semibold tracking-widest">01</span>
         <div className="flex items-center gap-4 flex-1">
           <div className="h-px w-12 bg-border-light"></div>
@@ -50,7 +50,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="grid items-start gap-14 md:grid-cols-[.72fr_1.28fr] md:gap-20">
+      <div className="relative z-10 grid items-start gap-14 md:grid-cols-[.72fr_1.28fr] md:gap-20">
         <div
           className={`transition-all duration-700 delay-100 ease-out ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -101,6 +101,14 @@ export default function About() {
             })}
           </div>
         </div>
+      </div>
+
+      <div className="about-watermark" aria-hidden="true">
+        <span className="about-watermark-monogram">Ki</span>
+        <span className="about-watermark-rule" />
+        <span className="about-watermark-cross" />
+        <span className="about-watermark-motto">BUILD · LEARN · GROW</span>
+        <span className="about-watermark-diagonal" />
       </div>
     </section>
   )
